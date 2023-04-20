@@ -9,6 +9,9 @@ on:
 
 env:
   APP_NAME: go-hello
+  GOOS: linux
+  GOARCH: amd64
+  CGO_ENABLED: 0
 
 jobs:
   Build:
@@ -24,10 +27,6 @@ jobs:
       # Build Reply URLs Operator
       - name: Build
         run: go build -v -a -o ${{ env.APP_NAME }} main.go
-        env:
-          GOOS: linux
-          GOARCH: amd64
-          CGO_ENABLED: 0
 
       - uses: actions/upload-artifact@v3
         with:
@@ -45,18 +44,9 @@ jobs:
 
       - name: Go fmt
         run: go fmt
-        env:
-          GOOS: linux
-          GOARCH: amd64
 
       - name: Go vet
         run: go vet
-        env:
-          GOOS: linux
-          GOARCH: amd64
 
       - name: Go test
         run: go test
-        env:
-          GOOS: linux
-          GOARCH: amd64
