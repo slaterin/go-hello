@@ -39,7 +39,7 @@ func TestGETHello(t *testing.T) {
 		hello(response, request)
 
 		got := response.Body.String()
-		want := "helloc\n"
+		want := "hello\n"
 
 		if got != want {
 			t.Errorf("got %q, want %q", got, want)
