@@ -48,7 +48,7 @@ func TestGETHello(t *testing.T) {
 }
 
 func TestGETHeaders(t *testing.T) {
-	t.Run("headers gets a 200 status code", func(t *testing.T) {
+	t.Run("headers responds with provided header", func(t *testing.T) {
 		request, err := http.NewRequest(http.MethodGet, "/headers", nil)
 		if err != nil {
 			fmt.Println(err)
