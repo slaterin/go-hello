@@ -30,11 +30,11 @@ jobs:
       - name: Go vet
         run: go vet
 
-      - name: Go test
-        run: go test
-
       - name: Build
         run: go build -v -a -o ${{ env.APP_NAME }} main.go
+
+      - name: Go test
+        run: go test -v
 
       - uses: actions/upload-artifact@v3
         with:
