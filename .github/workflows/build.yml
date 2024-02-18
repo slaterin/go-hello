@@ -36,7 +36,7 @@ jobs:
       - name: Go test
         run: go test -v
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: ${{ env.APP_NAME }}
           path: ./${{ env.APP_NAME }}
